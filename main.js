@@ -1,4 +1,5 @@
 Deno.serve((req) => {
-  console.log(`${req.method} ${req.url}`);
+  let traceparent = req.headers.get("traceparent") ?? "unknown";
+  console.log(`${req.method} ${req.url} traceparent: ${traceparent}`);
   return new Response(JSON.stringify(Deno.env.toObject()));
 });
