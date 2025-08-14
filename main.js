@@ -1,4 +1,4 @@
-cosnt PING_PATTERN = new URLPattern({ pathname: "/ping" });
+const PING_PATTERN = new URLPattern({ pathname: "/ping" });
 
 Deno.serve(async (req) => {
   let traceparent = req.headers.get("traceparent") ?? "unknown";
